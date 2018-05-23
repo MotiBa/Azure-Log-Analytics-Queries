@@ -1,0 +1,1 @@
+Event | where Source == "Microsoft-Windows-Sysmon" | where EventID== 3 | project SourceIPAddress_CF, SourcePort_CF , DestinationIP_CF , DestinationPort_CF  | summarize ConCount=count() by SourceIPAddress_CF, SourcePort_CF, DestinationIP_CF, DestinationPort_CF | order by ConCount  desc 
