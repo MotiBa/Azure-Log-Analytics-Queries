@@ -1,0 +1,1 @@
+SecurityEvent | where EventID ==4688 and (ParentProcessName contains "WINWORD.EXE" or ParentProcessName  contains "EXCEL.EXE" or ParentProcessName  contains "OUTLOOK.EXE" or ParentProcessName  contains "POWERPNT.EXE") | where Process in ("cmd.exe", "powershell.exe","cscript.exe","wscript.exe")
