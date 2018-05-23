@@ -1,0 +1,1 @@
+Event | where Source == "Microsoft-Windows-Sysmon" | where EventID== 3 | project SourceIPAddress_CF , DestinationIP_CF, Image_CF  | where DestinationIP_CF !startswith "10." or DestinationIP_CF !startswith "192.168" or DestinationIP_CF !startswith "172.2" |  summarize ConCount=count() by Image_CF, SourceIPAddress_CF, 
