@@ -1,0 +1,1 @@
+Event | where Source == "Microsoft-Windows-Sysmon" | where EventID==11 and (Image_CF contains "WINWORD.EXE" or Image_CF  contains "EXCEL.EXE" or Image_CF  contains "OUTLOOK.EXE" or Image_CF  contains "POWERPNT.EXE") | project Image_CF , TargetFileName_CF 
