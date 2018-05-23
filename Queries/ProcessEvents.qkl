@@ -1,0 +1,1 @@
+Event | where Source == "Microsoft-Windows-Sysmon" | where EventID==1 or EventID ==5 | project Image_CF , User_CF , ParentImage_CF, UtcTime_CF |  summarize ProcessCount=count(Image_CF) by User_CF ,Image_CF, ParentImage_CF
