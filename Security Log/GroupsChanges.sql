@@ -1,0 +1,1 @@
+SecurityEvent | where EventID between (4727 .. 4735) or EventID==4737 or EventID between (4754 .. 4758) | project Activity, GroupName=TargetUserName, SubjectAccount, MemberName, TimeGenerated | order by Activity desc 
